@@ -1,0 +1,107 @@
+{
+  "info": {
+    "name": "ERP Backend (Django/DRF)",
+    "_postman_id": "d6a0f0b2-6d3c-4c47-8e87-erp-collection",
+    "description": "Sample requests for ERP backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth - Token",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/auth/token/",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "token",
+            ""
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\": \"admin\", \"password\": \"admin123\"}"
+        }
+      }
+    },
+    {
+      "name": "Departments - List",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{base_url}}/api/departments/",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "departments",
+            ""
+          ]
+        }
+      }
+    },
+    {
+      "name": "Reports - Employees by Department",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{base_url}}/api/reports/?type=employees_by_department",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "reports",
+            ""
+          ],
+          "query": [
+            {
+              "key": "type",
+              "value": "employees_by_department"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Export - Employees CSV",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{base_url}}/api/export/?type=employees_csv",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "export",
+            ""
+          ],
+          "query": [
+            {
+              "key": "type",
+              "value": "employees_csv"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000"
+    }
+  ]
+}

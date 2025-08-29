@@ -1,0 +1,1 @@
+Build a simplified ERP backend in Django that manages Employees, Departments, and Projects with role-based access and reporting.
